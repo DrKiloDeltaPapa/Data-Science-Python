@@ -1,4 +1,4 @@
-# Case Match Function for Shapes
+## Case Match Conditional for Shapes
 
 
 def determine_shape(sides):
@@ -13,7 +13,25 @@ def determine_shape(sides):
             return f"Polygon with {sides} sides"
 
 
-# Example usage:
+## Example usage:
 
 shape = determine_shape(6)
 print(shape)
+
+
+## Another Example of the  Match Case or Case Match  Condtional
+
+# value = "four"
+# match value:
+#     case "one":
+#         result = 1
+#     case "two":
+#         result = 2
+#     case "three":
+#         result = 3
+#     case "four" | "five":
+#         result = (4, 5)
+#     case _:
+#         result = -1
+
+# print(result)
