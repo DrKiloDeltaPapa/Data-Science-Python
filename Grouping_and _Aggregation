@@ -6,22 +6,6 @@ import numpy as np
 import pandas as pd
 from pandas import Series, DataFrame
 
-DF_obj = DataFrame(
-    {
-        "column 1": [
-            1,
-            1,
-            2,
-            2,
-            3,
-            3,
-            3,
-        ],
-        "column 2": ["a", "a", "b", "b", "c", "c", "c"],
-        "column 3": ["A", "A", "B", "B", "C", "C", "C"],
-    }
-)
-DF_obj
 
 #  Below is the sytnax to expand the width of the Python Cell
 
@@ -33,14 +17,14 @@ DF_obj
 
 # Importing an External Dataset  *Note: if  you get an error use r before the file path, this converts it into a raw string
 
-# address = r"<data set path here!>"
-# cars = pd.read_csv(address)
-# cars.head()
+address = r"<data set path here!>"
+cars = pd.read_csv(address)
+cars.head()
 
 
 # The .head() Method above calls the first 5 records of a data set.
 
 #  Grouping by Coulmns and Calculating Means : To group by use the .groupby method and be sure to pass in the column name
 
-# cars_groups = cars.groupby(cars["cyl"])
-# cars_groups.mean()
+cars_groups = cars.groupby(cars["cyl"])
+cars_groups.mean()
