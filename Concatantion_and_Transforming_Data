@@ -1,0 +1,62 @@
+#  Concatenating and Transforming Data in Python
+
+import pandas as pd
+import numpy as np
+from pandas import Series, DataFrame
+
+
+#  Rememeber there are two ways to create a DataFrame.
+#   1. Is to let python generate the intergers for you as in the example below.
+#   2. Is for you to create it by setting the 'column' and 'row' values.
+#
+#         E.g., DF_obj = DataFrame({'column 1':[1,1,2,2,3,3,3,],
+#                     'column 2':['a','a','b','b','c','c','c'],
+#                     'column 3':['A','A','B','B','C','C','C']})
+#                DF_obj
+
+
+DF_obj = pd.DataFrame(np.arange(36).reshape(6, 6))
+DF_obj
+
+
+DF_obj_2 = pd.DataFrame(np.arange(15).reshape(5, 3))
+DF_obj_2
+
+
+# Concatenating Data
+# To concatenate by adding Rows use: axis = 1
+
+
+pd.concat([DF_obj, DF_obj_2], axis=1)
+
+
+# Concatenating Data
+# - To concatenate by adding Columns simply use the pd.concat function without adding the axis argument
+
+
+pd.concat([DF_obj, DF_obj_2])
+
+
+# Transforming Data
+
+
+# dropping data from postions [0, 2] from the DataFrame Rows.
+DF_obj.drop([0, 2])
+
+
+# dropping data from the postions [0, 2] from the DataFrame columns.
+DF_obj.drop([0, 2], axis=1)
+
+
+# Adding Data
+
+series_obj = Series(np.arange(6))
+series_obj.name = "added_variable"
+series_obj
+
+
+variable_added = DataFrame.join(DF_obj, series_obj)
+variable_added
+
+
+# Using the Append Method

@@ -1,0 +1,81 @@
+# Filtering and Selecting Data with Python.
+# Pandas is a fast data cleaning, preperation, and anlysis tool/library; easy to use for data visualization and machine learning.
+# Pandas is built on top of Numpy, which makes it easy to work with arrays and matrices.
+# Note: Arrays and Matrices are called Series and DataFrame in Pandas.
+# Shift+Enter is shortcut to run.
+
+# Import the necessary libraries.
+import numpy as np
+import pandas as pd
+
+from pandas import Series, DataFrame
+
+
+# Selecting and retriving data
+# You can write an index value in two forms.
+# Label index or
+# Integer index
+
+series_obj = Series(
+    np.arange(8),
+    index=["row 1", "row 2", "row 3", "row 4", "row 5", "row 6", "row 7", "row 8"],
+)
+
+
+print(series_obj)
+
+
+# Label indexing
+series_obj["row 7"]
+
+
+# indexing using intergers
+series_obj[[0, 7]]
+
+
+# Creating a DataFrame Object
+np.random.seed(25)
+DF_obj = DataFrame(
+    np.random.rand(36).reshape((6, 6)),
+    index=["row 1", "row 2", "row 3", "row 4", "row 5", "row 6"],
+    columns=["column 1", "column 2", "column 3", "column 4", "column 5", "column 6"],
+)
+print(DF_obj)
+
+
+# Selecting rows and Columns
+DF_obj.loc[["row 2", "row 5"], ["column 5", "column 2"]]
+
+
+# Data Slicing
+# You can use slicing to select and return a slice of several values from a data set. Slicing uses index values so you can use the same square brackets when doing data slicing.
+#
+# How slicing differs, however, is that with slicing you pass in two value that are sperated by a colon. The index value on theleft side of the colon should be the first value you want to select.
+# On the right side of the colon, you write the value you want to retrive. When you execute the code,
+# the indexer then simply finds the first record and the last record and returns every record in between them.
+
+
+series_obj["row 3":"row 7"]
+
+
+# Comparing with Scalars
+#
+# Now we're going to talk about comparison and scalar values. A scalar value is as single numerical value. You can use comparison oeprators like greater than or less than to return true/false values for all records to indicate how each element compares to a scalar value.
+
+
+DF_obj < 0.2
+
+
+# Filtering with Scalars
+
+
+series_obj[series_obj > 6]
+
+
+# Setting Values with Scalars
+
+
+series_obj["row 1", "row 2", "row 3"] = 8
+
+
+print(series_obj)

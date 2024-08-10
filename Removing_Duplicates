@@ -1,0 +1,61 @@
+# Import the necessary libraries.
+
+import numpy as np
+import pandas as pd
+from pandas import Series, DataFrame
+
+
+# Removing Duplicates.
+
+DF_obj = DataFrame(
+    {
+        "column 1": [
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+        ],
+        "column 2": ["a", "a", "b", "b", "c", "c", "c"],
+        "column 3": ["A", "A", "B", "B", "C", "C", "C"],
+    }
+)
+DF_obj
+
+
+# FINDING DUPLICATES: The duplicated fucntion( i.e., .duplicated() ) finds all duplicates in a DataFrame and rturns a boolean value.
+
+
+DF_obj.duplicated()
+
+
+# Dropping Duplicates: The drop duplicates function ( i.e., .drop_duplicates() ), finds all duplicates in a DataFrame and drops them.
+
+
+DF_obj.drop_duplicates()
+
+
+DF_obj = DataFrame(
+    {
+        "column 1": [
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+        ],
+        "column 2": ["a", "a", "b", "b", "c", "c", "c"],
+        "column 3": ["A", "A", "B", "B", "C", "C", "C"],
+    }
+)
+DF_obj
+
+
+# To drop duplicates from a specific column, use the .drop_duplicates function but pass in the column string see example below.
+
+
+DF_obj.drop_duplicates(["column 3"])
