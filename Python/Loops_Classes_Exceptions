@@ -1,7 +1,70 @@
-# While Loop
-def main():
-    x = 0
+## While Loop
+# def main():
+#     x = 0
 
-    while x < 5:
-        print(x)
-        x = x + 1
+#     while x < 5:
+#         print(x)
+#         x = x + 1
+
+
+## define for loop
+# for i in range(1, 5):
+#     print(i)
+
+## define a for loop over a collection
+# days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+# for d in days:
+#     print(d)
+
+## break statements:break statements "breaks" the execution of a loop if a conditon is met
+# for i in range(1, 5):
+#     if i == 4:
+#         break
+#     print(i)
+
+##continue statments: takes the condtional argument and if it is TRUE it continues which means it skips the rest
+## of the code in the loop and goes through the next interation.
+# for i in range(1, 5):
+#     if i % 2 == 0:
+#         continue
+#     print(i)
+
+## using the enumerate() function to get the index of a value
+# days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+# for i, d in enumerate(days):
+#     print(i, d)
+
+
+##CLASSESS:classes can be used to encapulate modules which can be used to keep large programs maintainable.
+# define the base class first along with it's property(e.g. keyboards which has a property called style.)
+class Keyboards:
+    def __init__(self, style):
+        self.style = style
+
+
+class splitkeyboards(Keyboards):
+    def __init__(self, style, hastwosides):
+        self.style = style  # No need for super().__init__(style) here
+        if hastwosides:
+            self.hands = 2
+        else:
+            self.hands = 1
+        self.ergonomics = "yes"
+
+
+class standardkeyboards(Keyboards):
+    def __init__(self, style, iswhole):
+        self.style = style  # No need for super().__init__(style) here
+        if iswhole:
+            self.hands = 1
+        else:
+            self.hands = 2
+        self.ergonomics = "no"
+
+
+split1 = splitkeyboards("dactly", True)
+split2 = splitkeyboards("dactly manuform", True)
+regular1 = standardkeyboards("mechanical", True)
+
+print(split1.hands)
+print(regular1.hands)
