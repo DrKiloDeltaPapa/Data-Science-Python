@@ -35,36 +35,69 @@
 #     print(i, d)
 
 
-##CLASSESS:classes can be used to encapulate modules which can be used to keep large programs maintainable.
+###CLASSESS:classes can be used to encapulate data which can be used to keep large programs maintainable.
 # define the base class first along with it's property(e.g. keyboards which has a property called style.)
-class Keyboards:
-    def __init__(self, style):
-        self.style = style
+# class Keyboards:
+#     def __init__(self, style):
+#         self.style = style
 
 
-class splitkeyboards(Keyboards):
-    def __init__(self, style, hastwosides):
-        self.style = style  # No need for super().__init__(style) here
-        if hastwosides:
-            self.hands = 2
-        else:
-            self.hands = 1
-        self.ergonomics = "yes"
+# class splitkeyboards(Keyboards):
+#     def __init__(self, style, hastwosides):
+#         self.style = style  # No need for super().__init__(style) here
+#         if hastwosides:
+#             self.hands = 2
+#         else:
+#             self.hands = 1
+#         self.ergonomics = "yes"
 
 
-class standardkeyboards(Keyboards):
-    def __init__(self, style, iswhole):
-        self.style = style  # No need for super().__init__(style) here
-        if iswhole:
-            self.hands = 1
-        else:
-            self.hands = 2
-        self.ergonomics = "no"
+# class standardkeyboards(Keyboards):
+#     def __init__(self, style, iswhole):
+#         self.style = style  # No need for super().__init__(style) here
+#         if iswhole:
+#             self.hands = 1
+#         else:
+#             self.hands = 2
+#         self.ergonomics = "no"
 
 
-split1 = splitkeyboards("dactly", True)
-split2 = splitkeyboards("dactly manuform", True)
-regular1 = standardkeyboards("mechanical", True)
+# split1 = splitkeyboards("dactly", True)
+# split2 = splitkeyboards("dactly manuform", True)
+# regular1 = standardkeyboards("mechanical", True)
 
-print(split1.hands)
-print(regular1.hands)
+# print(split1.hands)
+# print(regular1.hands)
+
+###EXCEPTIONS: help you you deal with errors in code in a clean manner.
+##Example below will cause an error becuase you can not devide by zero:
+# x = 10 / 0
+
+##The code above results in a <ZeroDevisionError: division by zero> the code below provides
+## a way to group the error and present a better expereince for the user.
+# try:
+#     x = 10 / 0
+# except:
+#     print("Don't be silly!")
+
+##you can write exceptions that handle different kinds of errors and group them togther.
+try:
+    answer = input("What should I devide 10 by?: ")
+    num = int(answer)
+    print(int((10 / num)))
+except ZeroDivisionError as e:
+    print("You can't devide by zero!")
+except ValueError as e:
+    print("You didn't provide a vlaid number!")
+    print(e)
+finally:
+    print("This code is goelden!")
+
+
+##Basic input ouput program that handles like an exception
+# square_root_0f_9 = 3
+# answer = int(input("What is the square root of 9?: "))
+# if answer != square_root_0f_9:
+#     print("Sorry Try again!")
+# elif answer == square_root_0f_9:
+#     print("Nice!")
