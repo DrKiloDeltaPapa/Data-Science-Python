@@ -37,37 +37,37 @@
 
 ###CLASSESS:classes can be used to encapulate data which can be used to keep large programs maintainable.
 # define the base class first along with it's property(e.g. keyboards which has a property called style.)
-# class Keyboards:
-#     def __init__(self, style):
-#         self.style = style
+class Keyboards:
+    def __init__(self, style):
+        self.style = style
 
 
-# class splitkeyboards(Keyboards):
-#     def __init__(self, style, hastwosides):
-#         self.style = style  # No need for super().__init__(style) here
-#         if hastwosides:
-#             self.hands = 2
-#         else:
-#             self.hands = 1
-#         self.ergonomics = "yes"
+class splitkeyboards(Keyboards):
+    def __init__(self, style, hastwosides):
+        self.style = style  # No need for super().__init__(style) here
+        if hastwosides:
+            self.hands = 2
+        else:
+            self.hands = 1
+        self.ergonomics = "yes"
 
 
-# class standardkeyboards(Keyboards):
-#     def __init__(self, style, iswhole):
-#         self.style = style  # No need for super().__init__(style) here
-#         if iswhole:
-#             self.hands = 1
-#         else:
-#             self.hands = 2
-#         self.ergonomics = "no"
+class standardkeyboards(Keyboards):
+    def __init__(self, style, iswhole):
+        self.style = style  # No need for super().__init__(style) here
+        if iswhole:
+            self.hands = 1
+        else:
+            self.hands = 2
+        self.ergonomics = "no"
 
 
-# split1 = splitkeyboards("dactly", True)
-# split2 = splitkeyboards("dactly manuform", True)
-# regular1 = standardkeyboards("mechanical", True)
+split1 = splitkeyboards("dactly", True)
+split2 = splitkeyboards("dactly manuform", True)
+regular1 = standardkeyboards("mechanical", True)
 
-# print(split1.hands)
-# print(regular1.hands)
+print(split1.hands)
+print(regular1.hands)
 
 ###EXCEPTIONS: help you you deal with errors in code in a clean manner.
 ##Example below will cause an error becuase you can not devide by zero:
@@ -91,7 +91,7 @@ except ValueError as e:
     print("You didn't provide a vlaid number!")
     print(e)
 finally:
-    print("This code is goelden!")
+    print("This code is golden!")
 
 
 ##Basic input ouput program that handles like an exception
