@@ -36,12 +36,13 @@
 
 
 ###CLASSESS:classes can be used to encapulate data which can be used to keep large programs maintainable.
-# define the base class first along with it's property(e.g. keyboards which has a property called style.)
+## define the base class first along with it's property(e.g. keyboards which has a property called style.)
 class Keyboards:
     def __init__(self, style):
         self.style = style
 
 
+# Next create the subclasses.
 class splitkeyboards(Keyboards):
     def __init__(self, style, hastwosides):
         self.style = style  # No need for super().__init__(style) here
@@ -81,17 +82,17 @@ print(regular1.hands)
 #     print("Don't be silly!")
 
 ##you can write exceptions that handle different kinds of errors and group them togther.
-try:
-    answer = input("What should I devide 10 by?: ")
-    num = int(answer)
-    print(int((10 / num)))
-except ZeroDivisionError as e:
-    print("You can't devide by zero!")
-except ValueError as e:
-    print("You didn't provide a vlaid number!")
-    print(e)
-finally:
-    print("This code is golden!")
+# try:
+#     answer = input("What should I devide 10 by?: ")
+#     num = int(answer)
+#     print(int((10 / num)))
+# except ZeroDivisionError as e:
+#     print("You can't devide by zero!")
+# except ValueError as e:
+#     print("You didn't provide a vlaid number!")
+#     print(e)
+# finally:
+#     print("This code is golden!")
 
 
 ##Basic input ouput program that handles like an exception
