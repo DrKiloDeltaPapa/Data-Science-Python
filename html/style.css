@@ -1,0 +1,22 @@
+body {
+      background-color: #87CEEB;
+    }
+    
+    p {
+      font-family: times;
+      font-size: 18px;
+      color: white;
+    }
+    
+    div {
+      background-color: white;
+      width: 400px;
+      color: black;
+    }
+    ul{
+      background-color:;
+      width: 300px;
+      color: white;
+      text-align: left;
+      font-size: 15px;
+    }
